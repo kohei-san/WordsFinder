@@ -20,8 +20,28 @@ Public Class Form1
         Dim files = Directory.GetFiles(rootDir, "*.*") ' SearchOption.AllDirectoriesとすると、配下のファイルがすべて取得できるが、除外フォルダを指定したいため１ディレクトリずつ取得していくこととする。
 
         For Each file As String In files
-            Debug.Print(file)
+            SearchWordInFile(file, searchWord)
         Next
+    End Sub
+
+    Private Sub SearchWordInFile(fileName As String, word As String)
+        Try
+            Dim lines = File.ReadAllLines(fileName)
+
+            For i As Integer = 0 To lines.Length - 1
+                Dim line = lines(i).Trim()
+
+                ' 指定した単語を検索
+                If line.Contains(word) Then
+                    Debug.Print("hit in " & fileName)
+                    Debug.Print("in line " & CStr(i + 1))
+                    'add the word to List
+                End If
+            Next
+        Catch ex As Exception
+            'add error message to List
+            Debug.Print($"Error reading file {fileName}: {ex.Message}")
+        End Try
     End Sub
 
 
