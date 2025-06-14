@@ -24,8 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         LblSearchWord = New Label()
         LblRootDirectory = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
+        txtSearchWord = New TextBox()
+        txtRootDirectory = New TextBox()
         BtnChooseDirectory = New Button()
         BtnSearch = New Button()
         SuspendLayout()
@@ -48,19 +48,19 @@ Partial Class Form1
         LblRootDirectory.TabIndex = 1
         LblRootDirectory.Text = "Root Directory"
         ' 
-        ' TextBox1
+        ' txtSearchWord
         ' 
-        TextBox1.Location = New Point(85, 98)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(481, 31)
-        TextBox1.TabIndex = 2
+        txtSearchWord.Location = New Point(85, 98)
+        txtSearchWord.Name = "txtSearchWord"
+        txtSearchWord.Size = New Size(481, 31)
+        txtSearchWord.TabIndex = 2
         ' 
-        ' TextBox2
+        ' txtRootDirectory
         ' 
-        TextBox2.Location = New Point(85, 231)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(481, 31)
-        TextBox2.TabIndex = 3
+        txtRootDirectory.Location = New Point(85, 231)
+        txtRootDirectory.Name = "txtRootDirectory"
+        txtRootDirectory.Size = New Size(481, 31)
+        txtRootDirectory.TabIndex = 3
         ' 
         ' BtnChooseDirectory
         ' 
@@ -87,8 +87,8 @@ Partial Class Form1
         ClientSize = New Size(800, 450)
         Controls.Add(BtnSearch)
         Controls.Add(BtnChooseDirectory)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(txtRootDirectory)
+        Controls.Add(txtSearchWord)
         Controls.Add(LblRootDirectory)
         Controls.Add(LblSearchWord)
         Name = "Form1"
@@ -99,8 +99,8 @@ Partial Class Form1
 
     Friend WithEvents LblSearchWord As Label
     Friend WithEvents LblRootDirectory As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtSearchWord As TextBox
+    Friend WithEvents txtRootDirectory As TextBox
     Friend WithEvents BtnChooseDirectory As Button
     Friend WithEvents BtnSearch As Button
 End Class
