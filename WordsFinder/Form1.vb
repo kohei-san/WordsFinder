@@ -4,10 +4,22 @@ Imports System.Text.RegularExpressions
 
 Public Class Form1
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
+        If Not Directory.Exists(txtRootDirectory.Text) Then
+            MessageBox.Show("指定されたディレクトリが存在しません。")
+            Exit Sub
+        End If
+
+        Search(txtSearchWord.Text, txtRootDirectory.Text)
 
         ' Excel出力
         ExportToExcel()
     End Sub
+    Private Sub Search(searchWord As String, rootDir As String)
+
+        ' まずは１つのディレクトリを読み取る検証
+
+    End Sub
+
 
     Private Sub ExportToExcel()
         Dim fileName As String = MakeExcelFileName()
