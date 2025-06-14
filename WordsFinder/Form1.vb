@@ -10,7 +10,15 @@ Public Class Form1
     End Sub
 
     Private Sub ExportToExcel()
-        Dim savePath As String = Path.Combine(Application.StartupPath, "SearchResults.xlsx")
+        Dim searchWord As String = "SearchResults" '検索ワードを後から引数としてとるように変更予定
+        Dim timestamp As String = DateTime.Now.ToString("yyyyMMddHHmmss")
+        Dim fileName As String = $"{searchWord}_{timestamp}.xlsx"
+
+        Dim savePath As String = Path.Combine(
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads"),
+            fileName
+        )
+
         Dim workbook As New XLWorkbook()
         Dim worksheet = workbook.Worksheets.Add("Results")
 
