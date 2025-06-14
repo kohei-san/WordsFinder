@@ -10,10 +10,7 @@ Public Class Form1
     End Sub
 
     Private Sub ExportToExcel()
-        Dim searchWord As String = "SearchResults" '検索ワードを後から引数としてとるように変更予定
-        Dim timestamp As String = DateTime.Now.ToString("yyyyMMddHHmmss")
-        Dim fileName As String = $"{searchWord}_{timestamp}.xlsx"
-
+        Dim fileName As String = MakeExcelFileName()
         Dim savePath As String = Path.Combine(
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads"),
             fileName
@@ -25,4 +22,11 @@ Public Class Form1
         workbook.SaveAs(savePath)
         MessageBox.Show($"検索結果を {savePath} に保存しました。")
     End Sub
+
+    Private Function MakeExcelFileName() As String
+        Dim searchWord As String = "SearchResults" '検索ワードを後から引数としてとるように変更予定
+        Dim timestamp As String = DateTime.Now.ToString("yyyyMMddHHmmss")
+        Dim fileName As String = $"{searchWord}_{timestamp}.xlsx"
+        Return fileName
+    End Function
 End Class
