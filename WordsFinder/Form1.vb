@@ -29,4 +29,15 @@ Public Class Form1
         Dim fileName As String = $"{searchWord}_{timestamp}.xlsx"
         Return fileName
     End Function
+
+    Private Sub BtnChooseDirectory_Click(sender As Object, e As EventArgs) Handles BtnChooseDirectory.Click
+        Using folderDialog As New FolderBrowserDialog()
+            folderDialog.Description = "検索するディレクトリを選択してください"
+            folderDialog.ShowNewFolderButton = False ' 新しいフォルダの作成を許可しない
+
+            If folderDialog.ShowDialog() = DialogResult.OK Then
+                txtRootDirectory.Text = folderDialog.SelectedPath
+            End If
+        End Using
+    End Sub
 End Class
