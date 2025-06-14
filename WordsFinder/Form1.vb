@@ -12,12 +12,16 @@ Public Class Form1
         Search(txtSearchWord.Text, txtRootDirectory.Text)
 
         ' Excel出力
-        ExportToExcel()
+        'ExportToExcel()
     End Sub
     Private Sub Search(searchWord As String, rootDir As String)
 
         ' まずは１つのディレクトリを読み取る検証
+        Dim files = Directory.GetFiles(rootDir, "*.*") ' SearchOption.AllDirectoriesとすると、配下のファイルがすべて取得できるが、除外フォルダを指定したいため１ディレクトリずつ取得していくこととする。
 
+        For Each file As String In files
+            Debug.Print(file)
+        Next
     End Sub
 
 
