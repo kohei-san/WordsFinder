@@ -12,7 +12,7 @@
         ' Do Nothing
     End Sub
 
-    Private Function ExtractActiveCode(str As String)
+    Protected Function ExtractActiveCode(str As String)
         Return str
     End Function
 End Class

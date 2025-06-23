@@ -6,4 +6,13 @@
         CharToEncloseLiteral = charForLiteral
         CharToEscape = charEscape
     End Sub
+
+    Public Overloads Function ExtractActiveCode(str As String)
+        Dim chars() As Char = str.ToCharArray
+        Dim i As Integer
+        For i = 0 To UBound(chars)
+            Console.WriteLine(chars(i))
+        Next
+        Return "aaaa"
+    End Function
 End Class
