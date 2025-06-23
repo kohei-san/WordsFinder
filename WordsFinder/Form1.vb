@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 
 Public Class Form1
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
-        Dim co As New CommentOut("'", """", """")
+        Dim co As New CommentOut_VB("'", """", """")
 
         'If Not Directory.Exists(txtRootDirectory.Text) Then
         '    MessageBox.Show("指定されたディレクトリが存在しません。")
