@@ -4,12 +4,14 @@ Imports System.Text.RegularExpressions
 
 Public Class Form1
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
-        If Not Directory.Exists(txtRootDirectory.Text) Then
-            MessageBox.Show("指定されたディレクトリが存在しません。")
-            Exit Sub
-        End If
+        Dim co As New CommentOut("'", """", """")
 
-        Search(txtSearchWord.Text, txtRootDirectory.Text)
+        'If Not Directory.Exists(txtRootDirectory.Text) Then
+        '    MessageBox.Show("指定されたディレクトリが存在しません。")
+        '    Exit Sub
+        'End If
+
+        'Search(txtSearchWord.Text, txtRootDirectory.Text)
 
         ' Excel出力
         'ExportToExcel()
