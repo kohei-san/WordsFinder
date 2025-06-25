@@ -15,4 +15,8 @@
     Protected Function ExtractActiveCode(str As String)
         Return str
     End Function
+
+    Public Sub ResetActiveCode()
+        ActiveCode = ""
+    End Sub
 End Class
